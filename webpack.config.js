@@ -4,6 +4,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = (env, argv) => {
     return {
+        mode: argv.mode || 'development',
         entry: {
             index: './src/index.js'
         },
@@ -15,6 +16,7 @@ module.exports = (env, argv) => {
         devServer: {
             contentBase: './src',
             host: '0.0.0.0',
+            port: 3030,
             historyApiFallback: true
         },
         module:{
